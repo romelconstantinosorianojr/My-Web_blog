@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ti Sao a Nagbalin nga Ili | Pagudpud</title>
+  <meta name="description" content="A Social Studies digital journey through the history, geography, landmarks, and stories of Pagudpud, Ilocos Norte." />
+
+  <!-- Historical + modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ocean:#123b52;
+      --deep:#082735;
+      --sand:#f3ead8;
+      --paper:#fffaf0;
+      --green:#526d58;
+      --brown:#76533b;
+      --ink:#1e2b30;
+      --muted:#68777a;
+      --white:#ffffff;
+      --line:rgba(18,59,82,.14);
+      --shadow:0 18px 50px rgba(8,39,53,.12);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Poppins,Arial,sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.7;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%}
+    button{font:inherit}
+
+    /* TOP BAR */
+    .topbar{
+      background:var(--deep);
+      color:#fff;
+      padding:9px 5%;
+      font-size:.78rem;
+      letter-spacing:.12em;
+      text-align:center;
+    }
+
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,250,240,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:1220px;
+      margin:auto;
+      min-height:82px;
+      padding:12px 5%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:250px;
+    }
+    .brand-mark{
+      width:46px;height:46px;
+      border:2px solid var(--brown);
+      border-radius:50%;
+      display:grid;place-items:center;
+      color:var(--brown);
+      font-size:1.25rem;
+      background:var(--sand);
+    }
+    .brand h1{
+      margin:0;
+      font-family:Cinzel,serif;
+      color:var(--ocean);
+      font-size:1.08rem;
+      line-height:1.15;
+      letter-spacing:.05em;
+    }
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-size:.64rem;
+      margin-top:4px;
+      letter-spacing:.08em;
+    }
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:18px;
+      margin:0;padding:0;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      font-size:.78rem;
+      font-weight:600;
+      color:var(--ocean);
+      letter-spacing:.04em;
+      padding:8px 3px;
+    }
+    nav a:hover{color:var(--brown)}
+
+    /* HERO */
+    .hero{
+      min-height:680px;
+      position:relative;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(8,39,53,.82),rgba(8,39,53,.34)),
+        url("https://upload.wikimedia.org/wikipedia/commons/5/52/Pagudpud_Beach.jpg") center/cover;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:auto 0 0;
+      height:110px;
+      background:linear-gradient(transparent,var(--paper));
+    }
+    .hero-content{
+      width:min(1100px,90%);
+      position:relative;
+      z-index:2;
+      color:#fff;
+      padding:90px 0 130px;
+    }
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.76rem;
+      font-weight:700;
+      color:#f4dcae;
+      margin-bottom:20px;
+    }
+    .hero h2{
+      max-width:850px;
+      margin:0;
+      font-family:Cinzel,serif;
+      font-size:clamp(2.7rem,7vw,6.2rem);
+      line-height:1.02;
+      letter-spacing:.02em;
+    }
+    .hero .tagline{
+      max-width:700px;
+      font-family:"Cormorant Garamond",serif;
+      font-style:italic;
+      font-size:clamp(1.4rem,3vw,2.15rem);
+      margin:25px 0 10px;
+      color:#f8ead1;
+    }
+    .hero p{
+      max-width:700px;
+      font-size:1rem;
+      color:#eef5f6;
+    }
+    .hero-actions{
+      display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;
+    }
+    .btn{
+      border:0;
+      border-radius:999px;
+      padding:13px 20px;
+      cursor:pointer;
+      font-weight:700;
+      transition:.2s;
+    }
+    .btn-primary{background:#f4dcae;color:var(--deep)}
+    .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+    .btn:hover{transform:translateY(-2px)}
+
+    /* LAYOUT */
+    .container{width:min(1220px,90%);margin:auto}
+    section{padding:90px 0}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      gap:25px;
+      align-items:end;
+      margin-bottom:38px;
+    }
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:.72rem;
+      color:var(--brown);
+      font-weight:800;
+    }
+    h3{
+      font-family:Cinzel,serif;
+      font-size:clamp(1.9rem,4vw,3.1rem);
+      line-height:1.1;
+      color:var(--ocean);
+      margin:7px 0 0;
+    }
+    .section-head p{max-width:540px;color:var(--muted);margin:0}
+
+    /* INTRO */
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      gap:28px;
+    }
+    .paper-card,.side-card,.feature-card,.quiz-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .paper-card{padding:42px}
+    .paper-card .quote{
+      border-left:4px solid var(--brown);
+      padding-left:20px;
+      font-family:"Cormorant Garamond",serif;
+      font-style:italic;
+      font-size:1.55rem;
+      color:var(--brown);
+      margin:25px 0;
+    }
+    .side-card{
+      padding:28px;
+      background:var(--sand);
+      box-shadow:none;
+    }
+    .side-card h4{font-family:Cinzel,serif;color:var(--ocean);margin-top:0}
+    .fact{
+      padding:15px 0;
+      border-top:1px solid rgba(118,83,59,.18);
+    }
+    .fact strong{display:block;color:var(--ocean)}
+
+    /* POSTS */
+    .post-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .post-card{
+      overflow:hidden;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:0 12px 35px rgba(8,39,53,.08);
+      transition:.25s;
+    }
+    .post-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .post-image{height:220px;object-fit:cover}
+    .post-body{padding:26px}
+    .post-label{
+      font-size:.68rem;
+      font-weight:800;
+      color:var(--brown);
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .post-body h4{
+      color:var(--ocean);
+      font-family:Cinzel,serif;
+      font-size:1.25rem;
+      line-height:1.3;
+      margin:9px 0 13px;
+    }
+    .post-body p{font-size:.9rem;color:var(--muted)}
+    .read-more{color:var(--ocean);font-weight:700;font-size:.85rem}
+
+    /* TIMELINE */
+    .timeline-wrap{
+      background:var(--deep);
+      color:#fff;
+      border-radius:32px;
+      padding:50px;
+      overflow:hidden;
+      position:relative;
+    }
+    .timeline-wrap::before{
+      content:"";
+      position:absolute;
+      left:50px;right:50px;top:50%;
+      height:2px;
+      background:rgba(255,255,255,.2);
+    }
+    .timeline{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:15px;
+      position:relative;
+      z-index:1;
+    }
+    .time-item{cursor:pointer}
+    .foot{
+      width:50px;height:50px;
+      border-radius:50% 50% 50% 5px;
+      transform:rotate(-45deg);
+      background:#f4dcae;
+      margin:0 auto 25px;
+      display:grid;place-items:center;
+      color:var(--deep);
+      font-weight:800;
+    }
+    .foot span{transform:rotate(45deg)}
+    .time-item h4{text-align:center;font-family:Cinzel,serif;margin:0 0 6px;color:#f4dcae}
+    .time-item p{text-align:center;color:#c9d5d8;font-size:.8rem;margin:0}
+    .time-item:hover .foot{transform:rotate(-45deg) scale(1.1)}
+
+    /* TIMELINE DETAIL */
+    .timeline-detail{
+      margin-top:30px;
+      background:rgba(255,255,255,.08);
+      padding:20px;
+      border-radius:16px;
+      color:#eaf0f1;
+      min-height:75px;
+      text-align:center;
+    }
+
+    /* MAP */
+    .map-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+      align-items:stretch;
+    }
+    .map-card{
+      min-height:530px;
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      background:#b9d9e8;
+      border:1px solid var(--line);
+    }
+    .map-card img{
+      height:100%;
+      object-fit:cover;
+      opacity:.92;
+    }
+    .map-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(8,39,53,.12),rgba(8,39,53,.55));
+      pointer-events:none;
+    }
+    .pin{
+      position:absolute;
+      border:0;
+      width:48px;height:48px;
+      border-radius:50% 50% 50% 0;
+      transform:rotate(-45deg);
+      background:#f4dcae;
+      color:var(--deep);
+      box-shadow:0 8px 20px rgba(0,0,0,.22);
+      cursor:pointer;
+    }
+    .pin span{display:block;transform:rotate(45deg);font-weight:900}
+    .pin.one{top:32%;left:28%}
+    .pin.two{top:47%;left:67%}
+    .pin.three{top:72%;left:47%}
+    .map-legend{
+      position:absolute;
+      left:20px;bottom:20px;
+      background:rgba(255,250,240,.95);
+      color:var(--deep);
+      border-radius:16px;
+      padding:14px 16px;
+      font-size:.76rem;
+      box-shadow:var(--shadow);
+    }
+    .landmark-list{
+      display:grid;
+      gap:15px;
+    }
+    .landmark{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#fff;
+      padding:22px;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .landmark:hover,.landmark.active{border-color:var(--brown);transform:translateX(5px)}
+    .landmark h4{margin:0 0 6px;color:var(--ocean);font-family:Cinzel,serif}
+    .landmark p{margin:0;color:var(--muted);font-size:.88rem}
+
+    /* FEATURE IMAGE */
+    .visual-story{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+      align-items:center;
+    }
+    .visual-story img{
+      height:470px;
+      object-fit:cover;
+      border-radius:30px;
+      box-shadow:var(--shadow);
+    }
+    .visual-copy{padding:20px}
+    .visual-copy .big{
+      font-family:"Cormorant Garamond",serif;
+      font-size:2.4rem;
+      color:var(--brown);
+      font-style:italic;
+      line-height:1.1;
+    }
+
+    /* QUIZ */
+    .quiz-section{background:var(--sand)}
+    .quiz-card{padding:40px;max-width:900px;margin:auto}
+    .question{
+      display:none;
+    }
+    .question.active{display:block}
+    .question h4{font-family:Cinzel,serif;color:var(--ocean);font-size:1.4rem}
+    .answers{display:grid;gap:10px;margin-top:18px}
+    .answer{
+      border:1px solid var(--line);
+      background:#fff;
+      padding:13px 16px;
+      border-radius:12px;
+      text-align:left;
+      cursor:pointer;
+    }
+    .answer:hover{border-color:var(--brown)}
+    .answer.correct{border-color:#58785f;background:#edf5ee}
+    .answer.wrong{border-color:#a75c51;background:#f9eeee}
+    .quiz-controls{display:flex;justify-content:space-between;align-items:center;margin-top:25px}
+    .progress{font-size:.78rem;color:var(--muted)}
+    #quizResult{display:none;text-align:center;padding:25px}
+
+    /* CIVIC */
+    .civic{
+      background:var(--ocean);
+      color:#fff;
+      border-radius:32px;
+      padding:55px;
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:35px;
+      align-items:center;
+    }
+    .civic h3{color:#fff}
+    .civic p{color:#d9e5e8}
+    .civic .mini{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .mini-box{
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:16px;
+      padding:18px;
+      background:rgba(255,255,255,.06);
+    }
+    .mini-box strong{display:block;color:#f4dcae}
+
+    /* SOURCES */
+    .sources{
+      font-size:.82rem;
+      color:var(--muted);
+    }
+    .sources a{color:var(--ocean);font-weight:600}
+    .source-list{display:grid;gap:10px}
+
+    /* FOOTER */
+    footer{
+      background:var(--deep);
+      color:#d6e2e5;
+      padding:55px 0 25px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+    footer h3{color:#fff;font-size:1.3rem}
+    footer p{font-size:.85rem}
+    .copyright{
+      border-top:1px solid rgba(255,255,255,.12);
+      margin-top:30px;
+      padding-top:20px;
+      font-size:.72rem;
+      color:#9fb1b6;
+      display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .nav{align-items:flex-start;flex-direction:column}
+      nav ul{justify-content:flex-start}
+      .intro-grid,.map-grid,.visual-story,.civic,.footer-grid{grid-template-columns:1fr}
+      .post-grid{grid-template-columns:1fr 1fr}
+      .timeline{grid-template-columns:1fr}
+      .timeline-wrap::before{display:none}
+      .time-item{display:grid;grid-template-columns:65px 1fr;gap:15px;align-items:center}
+      .foot{margin:0}
+      .time-item h4,.time-item p{text-align:left}
+    }
+    @media(max-width:600px){
+      section{padding:65px 0}
+      .hero{min-height:610px}
+      .paper-card,.quiz-card,.timeline-wrap,.civic{padding:28px}
+      .post-grid{grid-template-columns:1fr}
+      .map-card{min-height:430px}
+      .visual-story img{height:330px}
+    }
+  </style>
+
+<style id="princess-diana-sallacup-enhancements">
+/* --- Princess Diana G. Sallacup / Social Studies 2A enhancements --- */
+:root{
+  --heritage-ink:#2f251d;
+  --heritage-paper:#f4ead8;
+  --heritage-red:#9b3d32;
+  --heritage-gold:#c69a4b;
+  --heritage-teal:#236b68;
+  --heritage-green:#526b4c;
+  --heritage-sky:#8eb6b2;
+}
+body{
+  background:
+    radial-gradient(circle at 10% 12%, rgba(198,154,75,.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 30%, rgba(155,61,50,.13) 0 2px, transparent 3px),
+    linear-gradient(135deg, #f4ead8 0%, #e8dcc5 45%, #dce7df 100%);
+  background-attachment: fixed;
+}
+body:before{
+  content:"SOCIAL STUDIES • HISTORY • GEOGRAPHY";
+  position:fixed;
+  inset:auto auto 22px 22px;
+  z-index:999;
+  padding:8px 13px;
+  border:1px solid rgba(47,37,29,.18);
+  border-radius:999px;
+  background:rgba(244,234,216,.78);
+  backdrop-filter:blur(8px);
+  color:var(--heritage-ink);
+  font:700 10px/1.1 Poppins, sans-serif;
+  letter-spacing:1.4px;
+  box-shadow:0 8px 22px rgba(47,37,29,.12);
+  pointer-events:none;
+}
+.ss-floating-name{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:998;
+  padding:13px 17px;
+  border-radius:14px 14px 14px 4px;
+  color:#fff8e8;
+  background:linear-gradient(135deg,var(--heritage-red),#71342e);
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 12px 30px rgba(65,37,29,.30), inset 0 1px rgba(255,255,255,.25);
+  transform:perspective(500px) rotateY(-5deg);
+  font-family:Poppins,sans-serif;
+  text-align:right;
+  pointer-events:none;
+}
+.ss-floating-name strong{display:block;font-size:13px;letter-spacing:.3px}
+.ss-floating-name span{display:block;margin-top:3px;font-size:10px;opacity:.9;letter-spacing:1.2px}
+.ss-identity{
+  margin:18px auto 0;
+  max-width:760px;
+  text-align:center;
+  color:var(--heritage-ink);
+  font-family:Poppins,sans-serif;
+}
+.ss-identity .student-name{
+  display:inline-block;
+  padding:8px 16px;
+  border-radius:999px;
+  background:rgba(255,248,232,.76);
+  border:1px solid rgba(198,154,75,.65);
+  box-shadow:0 6px 18px rgba(47,37,29,.10);
+  font-weight:800;
+}
+.ss-identity .student-section{
+  display:block;
+  margin-top:7px;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--heritage-teal);
+}
+.ss-history-ribbon{
+  display:flex;
+  justify-content:center;
+  gap:9px;
+  flex-wrap:wrap;
+  margin:20px auto 5px;
+  max-width:900px;
+}
+.ss-history-ribbon span{
+  padding:7px 11px;
+  border-radius:6px;
+  font:700 10px/1 Poppins,sans-serif;
+  letter-spacing:1px;
+  color:var(--heritage-ink);
+  border:1px solid rgba(47,37,29,.14);
+  box-shadow:0 5px 13px rgba(47,37,29,.08);
+}
+.ss-history-ribbon span:nth-child(1){background:#d9b873}
+.ss-history-ribbon span:nth-child(2){background:#a8c7c1}
+.ss-history-ribbon span:nth-child(3){background:#d28c78}
+.ss-history-ribbon span:nth-child(4){background:#b5c79e}
+.ss-history-ribbon span:nth-child(5){background:#d9c5a5}
+footer .ss-footer-credit{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px dashed rgba(47,37,29,.25);
+  color:#f4ead8;
+}
+footer .ss-footer-credit strong{color:#fff1c7}
+</style>
+
+</head>
+
+<body>
+
+<div class="ss-floating-name" aria-label="Student author">
+  <strong>Princess Diana G. Sallacup</strong>
+  <span>Social Studies 2A</span>
+</div>
+
+
+  <div class="topbar">SOCIAL STUDIES • LIVING IN THE IT ERA • PAGUDPUD HISTORY</div>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="#home">
+        <div class="brand-mark">👣</div>
+        <div>
+          <h1>Ti Sao a Nagbalin nga Ili</h1>
+          <small>History • Geography • Community</small>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#story">THE STORY</a></li>
+          <li><a href="#timeline">TIMELINE</a></li>
+          <li><a href="#places">PLACES</a></li>
+          <li><a href="#map">MAP</a></li>
+          <li><a href="#quiz">QUIZ</a></li>
+          <li><a href="#sources">SOURCES</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Pagudpud • Ilocos Norte • Philippines</div>
+        <h2>BEFORE PAGUDPUD BECAME A DESTINATION, IT WAS A STORY.</h2>
+        <div class="tagline">“Ako’y pagud na pagod na, at ang sapatos ko’y pudpod.”</div>
+        <p>
+          Walk through the name, geography, community, and historical events that
+          shaped Pagudpud. Join with me in finding out the story behind the name of the town Pagudpud by pressing 
+          "START THE JOURNEY" button.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#story">START THE JOURNEY ↓</a>
+          <a class="btn btn-outline" href="#quiz">TAKE THE HISTORY QUIZ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">01 • The Story</div>
+            <h3>Every place carries a memory.</h3>
+          </div>
+          <p>
+            “Ti Sao a Nagbalin nga Ili” explores Pagudpud through history and geography,
+            connecting the past with the community and landscape readers can see today.
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <article class="paper-card">
+            <div class="kicker">Mission</div>
+            <p>
+              This blog aims to inform readers about the history and discovery of the town Pagudpud.
+              Tracing where was the town truly came from. Beyond its renowned white sand beach, beautiful destination or a tourist support.
+              This blog reveals the origin of the town, the story behind it and the significant events that shaped its identity.
+            </p>
+
+            <div class="quote">
+              “The journey is not only measured by how far our feet can walk,
+              but by how deeply we understand the places we pass.”
+            </div>
+
+            <p>
+              For students, the blog turns local history into an interactive experience.
+              For residents, it creates a digital space for remembering community heritage.
+              For travelers, it adds historical meaning to the places they visit.
+            </p>
+          </article>
+
+          <aside class="side-card">
+            <h4>📌 PAGUDPUD AT A GLANCE</h4>
+
+            <div class="fact">
+              <strong>Location</strong>
+              Northern Ilocos Norte, Luzon
+            </div>
+
+            <div class="fact">
+              <strong>Municipal creation</strong>
+              Executive Order No. 13 • February 14, 1954
+            </div>
+
+            <div class="fact">
+              <strong>Featured history</strong>
+              USS Stingray landing • August 27, 1944
+            </div>
+
+            <div class="fact">
+              <strong>Featured places</strong>
+              Bantay Abot Cave • Dos Hermanos • Patapat Viaduct
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTS -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">02 • Featured Stories</div>
+            <h3>Three doors into the past.</h3>
+          </div>
+          <p>Choose a story and begin your walk through Pagudpud's history.</p>
+        </div>
+
+        <div class="post-grid">
+
+          <article class="post-card">
+            <img class="post-image"
+              src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Pagudpud_Montage.png"
+              alt="Pagudpud montage showing local landmarks">
+            <div class="post-body">
+              <div class="post-label">THE NAME</div>
+              <h4>Pagud Na Nga Ako, Pudpod Pa ang Sapatos Ko</h4>
+              <p>
+                Explore the story and local explanations associated with the name
+                “Pagudpud,” while keeping oral tradition distinct from documented history.
+              </p>
+              <a class="read-more" href="#sources">READ WITH SOURCES →</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <img class="post-image"
+              src="https://upload.wikimedia.org/wikipedia/commons/5/52/Pagudpud_Beach.jpg"
+              alt="Pagudpud beach">
+            <div class="post-body">
+              <div class="post-label">FOUNDING & GOVERNANCE</div>
+              <h4>From Barrio to Bayan: The 1954 Founding</h4>
+              <p>
+                On February 14, 1954, Executive Order No. 13 organized several
+                barrios separated from Bangui into the Municipality of Pagudpud.
+              </p>
+              <a class="read-more" href="#timeline">VIEW TIMELINE →</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <img class="post-image"
+              src="https://gttp.images.tshiftcdn.com/379864/x/0/?dpr=2&height=250&quality=65"
+              alt="Coastal road and mountains near Pagudpud">
+            <div class="post-body">
+              <div class="post-label">WORLD WAR II</div>
+              <h4>When the USS Stingray Came Ashore</h4>
+              <p>
+                On August 27, 1944, USS Stingray reached the Caunayan area and
+                landed personnel and supplies connected with the Philippine resistance.
+              </p>
+              <a class="read-more" href="#war-story">EXPLORE THE STORY →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">03 • Walk the Footsteps</div>
+            <h3>A journey through time.</h3>
+          </div>
+          <p>Click a footprint to reveal a chapter.</p>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline">
+
+            <div class="time-item" onclick="showTimeline(0)">
+              <div class="foot"><span>1</span></div>
+              <div>
+                <h4>1944</h4>
+                <p>USS Stingray landing</p>
+              </div>
+            </div>
+
+            <div class="time-item" onclick="showTimeline(1)">
+              <div class="foot"><span>2</span></div>
+              <div>
+                <h4>1954</h4>
+                <p>Municipality created</p>
+              </div>
+            </div>
+
+            <div class="time-item" onclick="showTimeline(2)">
+              <div class="foot"><span>3</span></div>
+              <div>
+                <h4>Early community</h4>
+                <p>Before & around municipal formation</p>
+              </div>
+            </div>
+
+            <div class="time-item" onclick="showTimeline(3)">
+              <div class="foot"><span>4</span></div>
+              <div>
+                <h4>Later years</h4>
+                <p>Roads & regional connection</p>
+              </div>
+            </div>
+
+            <div class="time-item" onclick="showTimeline(4)">
+              <div class="foot"><span>5</span></div>
+              <div>
+                <h4>Today</h4>
+                <p>Heritage, geography & tourism</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="timeline-detail" id="timelineDetail">
+            👣 <strong>Start anywhere.</strong> Click a footprint above to open a chapter of the journey.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAR STORY -->
+    <section id="war-story">
+      <div class="container">
+        <div class="visual-story">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Pagudpud_Montage.png"
+               alt="Pagudpud montage featuring Dos Hermanos, Bantay Abot Cave and Patapat Viaduct">
+          <div class="visual-copy">
+            <div class="kicker">04 • World War II</div>
+            <h3>When the USS Stingray Came Ashore</h3>
+            <p class="big">A local shoreline can also be part of a global war.</p>
+            <p>
+              Historical accounts record that the American submarine USS Stingray
+              reached the Caunayan area of Pagudpud on August 27, 1944. A fifteen-man
+              team led by 2nd Lt. Jose V. Valera landed with weapons and equipment
+              intended to support resistance efforts against Japanese forces.
+            </p>
+            <p>
+              Studying this event helps connect local history with the wider
+              Philippines Campaign of World War II and reminds readers that major
+              historical events are also experienced in particular communities and places.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section id="map">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">05 • Explore the Landscape</div>
+            <h3>History has a geography.</h3>
+          </div>
+          <p>Click a map pin or landmark card to learn why the place matters.</p>
+        </div>
+
+        <div class="map-grid">
+
+          <div class="map-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Map_of_Pagudpud.png"
+                 alt="Stylized map of Pagudpud">
+            <div class="map-overlay"></div>
+
+            <button class="pin one" onclick="selectPlace('bantay')" title="Bantay Abot Cave">
+              <span>1</span>
+            </button>
+            <button class="pin two" onclick="selectPlace('dos')" title="Dos Hermanos Islands">
+              <span>2</span>
+            </button>
+            <button class="pin three" onclick="selectPlace('patapat')" title="Patapat Viaduct">
+              <span>3</span>
+            </button>
+
+            <div class="map-legend">
+              <strong>🗺️ HISTORICAL-GEOGRAPHIC MAP</strong><br>
+              1 Bantay Abot • 2 Dos Hermanos • 3 Patapat
+            </div>
+          </div>
+
+          <div class="landmark-list">
+
+            <div class="landmark" id="bantay" onclick="selectPlace('bantay')">
+              <div class="kicker">PIN 01</div>
+              <h4>🪨 Bantay Abot Cave</h4>
+              <p>
+                A distinctive coastal formation. The name is commonly explained
+                as “a mountain with a hole,” and the feature is technically an
+                arched rock formation rather than a conventional cave.
+              </p>
+            </div>
+
+            <div class="landmark" id="dos" onclick="selectPlace('dos')">
+              <div class="kicker">PIN 02</div>
+              <h4>🌊 Dos Hermanos Islands</h4>
+              <p>
+                The “Two Brothers” islets are a recognizable part of the coastal
+                landscape and can be seen from the Maira-ira area.
+              </p>
+            </div>
+
+            <div class="landmark" id="patapat" onclick="selectPlace('patapat')">
+              <div class="kicker">PIN 03</div>
+              <h4>🌉 Patapat Viaduct</h4>
+              <p>
+                A winding coastal viaduct that follows the northern landscape
+                and forms an important transport connection between the Ilocos
+                Region and Cagayan Valley.
+              </p>
+            </div>
+
+            <div class="side-card" id="placeInfo">
+              <h4>📍 SELECT A LANDMARK</h4>
+              <p>
+                A Social Studies map asks more than “Where is it?”
+                It also asks: <strong>Why does this place matter?</strong>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="quiz-section" id="quiz">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">06 • Test Your Knowledge</div>
+            <h3>How well do you know Pagudpud?</h3>
+          </div>
+          <p>Four quick questions. Learn as you play.</p>
+        </div>
+
+        <div class="quiz-card">
+
+          <div class="question active" data-q="0">
+            <div class="kicker">QUESTION 1</div>
+            <h4>When was the Municipality of Pagudpud created through Executive Order No. 13?</h4>
+            <div class="answers">
+              <button class="answer" onclick="answer(0,this,false)">A. 1944</button>
+              <button class="answer" onclick="answer(0,this,true)">B. 1954</button>
+              <button class="answer" onclick="answer(0,this,false)">C. 1964</button>
+              <button class="answer" onclick="answer(0,this,false)">D. 1974</button>
+            </div>
+          </div>
+
+          <div class="question" data-q="1">
+            <div class="kicker">QUESTION 2</div>
+            <h4>Which World War II submarine is associated with the 1944 landing in the Pagudpud area?</h4>
+            <div class="answers">
+              <button class="answer" onclick="answer(1,this,true)">A. USS Stingray</button>
+              <button class="answer" onclick="answer(1,this,false)">B. USS Arizona</button>
+              <button class="answer" onclick="answer(1,this,false)">C. USS Missouri</button>
+              <button class="answer" onclick="answer(1,this,false)">D. USS Enterprise</button>
+            </div>
+          </div>
+
+          <div class="question" data-q="2">
+            <div class="kicker">QUESTION 3</div>
+            <h4>Which landmark is a coastal viaduct?</h4>
+            <div class="answers">
+              <button class="answer" onclick="answer(2,this,false)">A. Dos Hermanos</button>
+              <button class="answer" onclick="answer(2,this,false)">B. Bantay Abot</button>
+              <button class="answer" onclick="answer(2,this,true)">C. Patapat Viaduct</button>
+              <button class="answer" onclick="answer(2,this,false)">D. Blue Lagoon</button>
+            </div>
+          </div>
+
+          <div class="question" data-q="3">
+            <div class="kicker">QUESTION 4</div>
+            <h4>Why study local history?</h4>
+            <div class="answers">
+              <button class="answer" onclick="answer(3,this,false)">A. Only to memorize dates</button>
+              <button class="answer" onclick="answer(3,this,true)">B. To understand how communities, people, places, and events are connected</button>
+              <button class="answer" onclick="answer(3,this,false)">C. Only for tourists</button>
+              <button class="answer" onclick="answer(3,this,false)">D. It has no connection to the present</button>
+            </div>
+          </div>
+
+          <div id="quizResult">
+            <h3>Journey Complete! 👣</h3>
+            <p id="scoreText"></p>
+            <button class="btn btn-primary" onclick="restartQuiz()">TAKE IT AGAIN</button>
+          </div>
+
+          <div class="quiz-controls">
+            <span class="progress" id="progress">Question 1 of 4</span>
+            <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>NEXT →</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CIVIC RELEVANCE -->
+    <section>
+      <div class="container">
+        <div class="civic">
+          <div>
+            <div class="kicker" style="color:#f4dcae">07 • Why Local History Matters</div>
+            <h3>From one town to a bigger story.</h3>
+          </div>
+
+          <div>
+            <p>
+              Learning about Pagudpud is more than learning about one municipality.
+              Local history helps students understand how communities develop, how
+              people interact with their environment, how historical events reach
+              local places, and why cultural and historical heritage deserves care.
+            </p>
+
+            <div class="mini">
+              <div class="mini-box">
+                <strong>🏛️ HISTORY</strong>
+                Remember events and community development.
+              </div>
+              <div class="mini-box">
+                <strong>🗺️ GEOGRAPHY</strong>
+                Understand people through place.
+              </div>
+              <div class="mini-box">
+                <strong>🤝 CIVIC AWARENESS</strong>
+                Recognize community heritage.
+              </div>
+              <div class="mini-box">
+                <strong>🌏 GLOBAL CONNECTION</strong>
+                Connect local events to wider history.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section id="sources">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">08 • Research Notes</div>
+            <h3>History deserves sources.</h3>
+          </div>
+          <p>
+            These references can be retained in the final student version to strengthen
+            historical accuracy and show where the information came from.
+          </p>
+        </div>
+
+        <div class="paper-card sources">
+          <div class="source-list">
+            <div>
+              <strong>1. Executive Order No. 13 (February 14, 1954)</strong><br>
+              Creating the Municipality of Pagudpud in the Province of Ilocos Norte.
+              <br>
+              <a href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/5/74143" target="_blank" rel="noopener">
+                Supreme Court E-Library →
+              </a>
+            </div>
+
+            <div>
+              <strong>2. Municipality of Pagudpud — Municipal Profile</strong><br>
+              Background on the creation and early municipal leadership of Pagudpud.
+              <br>
+              <a href="https://pagudpudiln.gov.ph/municipal-profile/" target="_blank" rel="noopener">
+                Municipality of Pagudpud →
+              </a>
+            </div>
+
+            <div>
+              <strong>3. Pagudpud — Philippine Cultural Education Online</strong><br>
+              Geographic and cultural background, including Pagudpud's coastal landmarks.
+              <br>
+              <a href="https://philippineculturaleducation.com.ph/pagudpud/" target="_blank" rel="noopener">
+                Philippine Cultural Education Online →
+              </a>
+            </div>
+
+            <div>
+              <strong>4. Pagudpud Montage — Wikimedia Commons</strong><br>
+              Image by Adkranz, licensed CC BY-SA 3.0 / GFDL.
+              <br>
+              <a href="https://commons.wikimedia.org/wiki/File:Pagudpud_Montage.png" target="_blank" rel="noopener">
+                Image source & license →
+              </a>
+            </div>
+
+            <div>
+              <strong>5. Pagudpud Beach — Wikimedia Commons</strong><br>
+              Photo by John Ryan Cordova, licensed CC BY-SA 2.0.
+              <br>
+              <a href="https://commons.wikimedia.org/wiki/File:Pagudpud_Beach.jpg" target="_blank" rel="noopener">
+                Image source & license →
+              </a>
+            </div>
+
+            <div>
+              <strong>6. USS Stingray landing information</strong><br>
+              Historical accounts of the August 27, 1944 landing and its connection
+              to Philippine resistance efforts.
+              <br>
+              <a href="https://www.uswarmemorials.org/html/monument_details.php?MemID=4835&SiteID=3475" target="_blank" rel="noopener">
+                U.S. War Memorials source →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="kicker" style="color:#f4dcae">TI SAO A NAGBALIN NGA ILI</div>
+          <h3>Every place has a story.<br>Every story has a place.</h3>
+          <p>
+            A Social Studies web blog created for <strong>Living in the IT Era</strong>.
+          </p>
+        </div>
+
+        <div>
+          <p><strong>Target readers:</strong> Students • Local Residents • Travelers</p>
+          <p><strong>Focus:</strong> History • Geography • Culture • Civic Awareness</p>
+          <p><strong>Theme:</strong> A digital journey through Pagudpud</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <span>© 2026 Ti Sao a Nagbalin nga Ili • Student Social Studies Project</span>
+        <span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* FOOTSTEP TIMELINE */
+    const timelineText = [
+      "<strong>August 27, 1944:</strong> USS Stingray reached the Caunayan area during World War II and landed personnel and supplies connected with resistance efforts against Japanese forces.",
+      "<strong>February 14, 1954:</strong> Executive Order No. 13 created the Municipality of Pagudpud by separating specified barrios from Bangui and organizing them as an independent municipality.",
+      "<strong>Community history:</strong> Pagudpud's story also includes the communities, places, and local leadership that developed before and around municipal formation.",
+      "<strong>Later development:</strong> Roads and infrastructure changed how people moved through the northern landscape. Patapat Viaduct became a major visual and transport feature of the area.",
+      "<strong>Pagudpud today:</strong> The municipality is experienced through its communities, coastlines, mountains, landmarks, infrastructure, history, and tourism—making it a rich subject for Social Studies."
+    ];
+
+    function showTimeline(index){
+      document.getElementById("timelineDetail").innerHTML = timelineText[index];
+    }
+
+    /* LANDMARK MAP */
+    const places = {
+      bantay: {
+        title:"🪨 Bantay Abot Cave",
+        text:"Bantay Abot is a distinctive coastal formation. Its name is commonly explained as “a mountain with a hole.” Sources describe it as an arched rock formation shaped by coastal processes rather than a conventional cave."
+      },
+      dos: {
+        title:"🌊 Dos Hermanos Islands",
+        text:"Dos Hermanos, meaning “Two Brothers,” is a pair of recognizable islets associated with the coastal landscape near Maira-ira. The islets form part of the geography and visual identity of Pagudpud."
+      },
+      patapat: {
+        title:"🌉 Patapat Viaduct",
+        text:"Patapat Viaduct is a winding coastal road structure that follows the northern terrain. It is important not only as a scenic landmark but also as infrastructure connecting the Ilocos Region toward Cagayan Valley."
+      }
+    };
+
+    function selectPlace(id){
+      document.querySelectorAll(".landmark").forEach(el => el.classList.remove("active"));
+      const selected = document.getElementById(id);
+      if(selected) selected.classList.add("active");
+
+      const p = places[id];
+      document.getElementById("placeInfo").innerHTML =
+        "<h4>" + p.title + "</h4><p>" + p.text + "</p>";
+    }
+
+    /* QUIZ */
+    let current = 0;
+    let score = 0;
+    let answered = false;
+
+    function answer(questionIndex, button, correct){
+      if(answered) return;
+      answered = true;
+
+      document.querySelectorAll(".question")[questionIndex]
+        .querySelectorAll(".answer")
+        .forEach(btn => btn.disabled = true);
+
+      button.classList.add(correct ? "correct" : "wrong");
+
+      if(correct) score++;
+
+      document.getElementById("nextBtn").disabled = false;
+    }
+
+    function nextQuestion(){
+      if(!answered) return;
+
+      document.querySelectorAll(".question")[current].classList.remove("active");
+      current++;
+      answered = false;
+
+      if(current >= 4){
+        document.getElementById("quizResult").style.display = "block";
+        document.getElementById("scoreText").textContent =
+          "You scored " + score + " out of 4. Keep walking through the stories of Pagudpud!";
+        document.querySelector(".quiz-controls").style.display = "none";
+        return;
+      }
+
+      document.querySelectorAll(".question")[current].classList.add("active");
+      document.getElementById("progress").textContent =
+        "Question " + (current + 1) + " of 4";
+      document.getElementById("nextBtn").disabled = true;
+    }
+
+    function restartQuiz(){
+      current = 0;
+      score = 0;
+      answered = false;
+
+      document.querySelectorAll(".question").forEach((q,i) => {
+        q.classList.toggle("active", i === 0);
+        q.querySelectorAll(".answer").forEach(btn => {
+          btn.disabled = false;
+          btn.classList.remove("correct","wrong");
+        });
+      });
+
+      document.getElementById("quizResult").style.display = "none";
+      document.querySelector(".quiz-controls").style.display = "flex";
+      document.getElementById("progress").textContent = "Question 1 of 4";
+      document.getElementById("nextBtn").disabled = true;
+    }
+  </script>
+
+</body>
+</html>
